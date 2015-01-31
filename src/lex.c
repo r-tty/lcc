@@ -208,7 +208,7 @@ int gettok(void) {
 		case '+': return *rcp == '+' ? cp++, INCR   : '+';
 		case ';': case ',': case ':':
 		case '*': case '~': case '%': case '^': case '?':
-		case '[': case ']': case '{': case '}': case '(': case ')': 
+		case '[': case ']': case '{': case '}': case '(': case ')':
 			return rcp[-1];
 		case '\n': case '\v': case '\r': case '\f':
 			nextline();

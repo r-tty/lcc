@@ -11,7 +11,7 @@ main()
 		big(i);
 	limit();
 	return 0;
-}	
+}
 
 backslash(c)
 {

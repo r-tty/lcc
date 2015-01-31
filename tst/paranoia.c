@@ -75,7 +75,7 @@ little mnemonic significance), the Pascal version uses meaningful
 identifiers as follows [Note: A few changes have been made for C]:
 
 
-BASIC   C               BASIC   C               BASIC   C               
+BASIC   C               BASIC   C               BASIC   C
 
    A                       J                       S    StickyBit
    A1   AInverse           J0   NoErrors           T
@@ -125,7 +125,7 @@ correspondence is as follows:
 
 
 BASIC       Pascal
-lines 
+lines
 
   90- 140   Pause
  170- 250   Instructions
@@ -267,7 +267,7 @@ int NoTrials = 20; /*Number of tests for commutativity. */
 #define False 0
 #define True 1
 
-/* Definitions for declared types 
+/* Definitions for declared types
 	Guard == (Yes, No);
 	Rounding == (Chopped, Rounded, Other);
 	Message == packed array [1..40] of char;
@@ -383,7 +383,7 @@ main()
 	Milestone = 7;
 	/*=============================================*/
 	printf("Program is now RUNNING tests on small integers:\n");
-	
+
 	TstCond (Failure, (Zero + Zero == Zero) && (One - One == Zero)
 		   && (One > Zero) && (One + One == Two),
 			"0+0 != 0, 1-1 != 0, 1 <= 0, or 1+1 != 2");
@@ -468,20 +468,20 @@ part2(){
 	U2 = Radix * U1;
 	printf("Closest relative separation found is U1 = %.7e .\n\n", U1);
 	printf("Recalculating radix and precision\n ");
-	
+
 	/*save old values*/
 	E0 = Radix;
 	E1 = U1;
 	E9 = U2;
 	E3 = Precision;
-	
+
 	X = Four / Three;
 	Third = X - One;
 	F6 = Half - Third;
 	X = F6 + F6;
 	X = FABS(X - Third);
 	if (X < U2) X = U2;
-	
+
 	/*... now X = (unknown no.) ulps of 1+...*/
 	do  {
 		U2 = X;
@@ -489,7 +489,7 @@ part2(){
 		Y = One + Y;
 		X = Y - One;
 		} while ( ! ((U2 <= X) || (X <= Zero)));
-	
+
 	/*... now U2 == 1 ulp of 1 + ... */
 	X = Two / Three;
 	F6 = X - Half;
@@ -497,7 +497,7 @@ part2(){
 	X = Third - Half;
 	X = FABS(X + F6);
 	if (X < U1) X = U1;
-	
+
 	/*... now  X == (unknown no.) ulps of 1 -... */
 	do  {
 		U1 = X;
@@ -551,7 +551,7 @@ part2(){
 		printf("Precision cannot be characterized by an Integer number\n");
 		printf("of significant digits but, by itself, this is a minor flaw.\n");
 		}
-	if (Radix == One) 
+	if (Radix == One)
 		printf("logarithmic encoding has precision characterized solely by U1.\n");
 	else printf("The number of significant digits of the Radix is %f .\n",
 			Precision);
@@ -1075,7 +1075,7 @@ part5(){
 		if (SqEr < MinSqEr) MinSqEr = SqEr;
 		SqEr = (Y - Half) + Z;
 		if (SqEr > MaxSqEr) MaxSqEr = SqEr;
-		if (((Indx == 1) || (Indx == 3))) 
+		if (((Indx == 1) || (Indx == 3)))
 			X = OneUlp * Sign (X) * FLOOR(Eight / (Nine * SQRT(OneUlp)));
 		else {
 			OneUlp = U1;
@@ -1132,7 +1132,7 @@ part5(){
 				do  {
 					X = Z1 * Z;
 					X = X - FLOOR(X / Radix) * Radix;
-					if (X == One) 
+					if (X == One)
 						Break = True;
 					else
 						Z1 = Z1 - One;
@@ -1377,7 +1377,7 @@ part6(){
 		if (E1 < E0) {
 			printf("Products underflow at a higher");
 			printf(" threshold than differences.\n");
-			if (PseudoZero == Zero) 
+			if (PseudoZero == Zero)
 			E0 = E1;
 			}
 		else {
@@ -1406,7 +1406,7 @@ part6(){
 			}
 		Pause();
 		break;
-	
+
 		case	2:
 		BadCond(Failure, "Underflow confuses Comparison, which alleges that\n");
 		printf("Q == Y while denying that |Q - Y| == 0; these values\n");
@@ -1414,11 +1414,11 @@ part6(){
 		printf ("|Q - Y| = %.17e .\n" , FABS(Q - Y2));
 		UfThold = Q;
 		break;
-	
+
 		case	3:
 		X = X;
 		break;
-	
+
 		case	4:
 		if ((Q == UfThold) && (E1 == E0)
 			&& (FABS( UfThold - E1 / E9) <= E1)) {
@@ -1592,7 +1592,7 @@ part7(){
 	PrintIfNPositive();
 	if (N == 0) printf(" ... no discrepancies found.\n");
 	printf("\n");
-	
+
 	/*=============================================*/
 	Milestone = 160;
 	/*=============================================*/
@@ -1706,7 +1706,7 @@ part8(){
 	if (X*Y < One || X > Y) {
 		if (X * Y < U1 || X > Y/U1) BadCond(Defect, "Badly");
 		else BadCond(Flaw, "");
-			
+
 		printf(" unbalanced range; UfThold * V = %.17e\n\t%s\n",
 			X, "is too far from 1.\n");
 		}
@@ -1810,7 +1810,7 @@ part8(){
 	else {
 		printf("No failures, defects nor flaws have been discovered.\n");
 		if (! ((RMult == Rounded) && (RDiv == Rounded)
-			&& (RAddSub == Rounded) && (RSqrt == Rounded))) 
+			&& (RAddSub == Rounded) && (RSqrt == Rounded)))
 			printf("The arithmetic diagnosed seems Satisfactory.\n");
 		else {
 			if (StickyBit >= One &&
@@ -1820,7 +1820,7 @@ part8(){
 				if ((Radix == Two) &&
 					 ((Precision - Four * Three * Two) *
 					  ( Precision - TwentySeven -
-					   TwentySeven + One) == Zero)) 
+					   TwentySeven + One) == Zero))
 					printf("754");
 				else printf("854");
 				if (IEEE) printf(".\n");
@@ -1893,7 +1893,7 @@ char *T;
 FLOAT Random()
 {
 	FLOAT X, Y;
-	
+
 	X = Random1 + Random9;
 	Y = X * X;
 	Y = Y * Y;
@@ -1909,7 +1909,7 @@ SqXMinX (ErrKind)
 int ErrKind;
 {
 	FLOAT XA, XB;
-	
+
 	XB = X * BInvrse;
 	XA = X - XB;
 	SqEr = ((SQRT(X * X) - XB) - XA) / OneUlp;

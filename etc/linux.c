@@ -22,7 +22,7 @@ char *ld[] = {
 	/*  0 */ "/usr/bin/ld", "-m", "elf_i386", "-dynamic-linker",
 	/*  4 */ "/lib/ld-linux.so.2", "-o", "$3",
 	/*  7 */ "/usr/lib/crt1.o", "/usr/lib/crti.o",
-	/*  9 */ LCCDIR "/gcc/crtbegin.o", 
+	/*  9 */ LCCDIR "/gcc/crtbegin.o",
                  "$1", "$2",
 	/* 12 */ "-L" LCCDIR,
 	/* 13 */ "-llcc",
@@ -47,7 +47,7 @@ int option(char *arg) {
 	} else if (strcmp(arg, "-p") == 0 || strcmp(arg, "-pg") == 0) {
 		ld[7] = "/usr/lib/gcrt1.o";
 		ld[18] = "-lgmon";
-	} else if (strcmp(arg, "-b") == 0) 
+	} else if (strcmp(arg, "-b") == 0)
 		;
 	else if (strcmp(arg, "-g") == 0)
 		;

@@ -114,13 +114,13 @@ $Bsparc.c:	$Blburg$E src/sparc.md;    $Blburg src/sparc.md    $@
 $Bx86.c:	$Blburg$E src/x86.md;      $Blburg src/x86.md      $@
 $Bx86linux.c:	$Blburg$E src/x86linux.md; $Blburg src/x86linux.md $@
 
-$Bbprint$E:	$Bbprint$O;	$(LD) $(LDFLAGS) -Fe$@ $Bbprint$O 
+$Bbprint$E:	$Bbprint$O;	$(LD) $(LDFLAGS) -Fe$@ $Bbprint$O
 $Bops$E:	$Bops$O;	$(LD) $(LDFLAGS) -Fe$@ $Bops$O
 
 $Bbprint$O:	etc/bprint.c src/profio.c;	$(CC) $(CFLAGS) -c -Isrc -Fo$@ etc/bprint.c
 $Bops$O:	etc/ops.c src/ops.h;		$(CC) $(CFLAGS) -c -Isrc -Fo$@ etc/ops.c
 
-$Blcc$E:	$Blcc$O $Bhost$O;	$(LD) $(LDFLAGS) -Fe$@ $Blcc$O $Bhost$O 
+$Blcc$E:	$Blcc$O $Bhost$O;	$(LD) $(LDFLAGS) -Fe$@ $Blcc$O $Bhost$O
 
 $Blcc$O:	etc/lcc.c;	$(CC) $(CFLAGS) -c -DTEMPDIR=\"$(TEMPDIR)\" -Fo$@ etc/lcc.c
 $Bhost$O:	$(HOSTFILE);	$(CC) $(CFLAGS) -c -Fo$@ $(HOSTFILE)
@@ -135,7 +135,7 @@ $Bassert$O:	lib/assert.c;	$(CC) -c -Fo$@ lib/assert.c
 $Byynull$O:	lib/yynull.c;	$(CC) -c -Fo$@ lib/yynull.c
 $Bbbexit$O:	lib/bbexit.c;	$(CC) -c -Fo$@ lib/bbexit.c
 
-$Blburg$E:	$Blburg$O $Bgram$O;	$(LD) $(LDFLAGS) -Fe$@ $Blburg$O $Bgram$O 
+$Blburg$E:	$Blburg$O $Bgram$O;	$(LD) $(LDFLAGS) -Fe$@ $Blburg$O $Bgram$O
 
 $Blburg$O $Bgram$O:	lburg/lburg.h
 
@@ -146,7 +146,7 @@ CPPOBJS=$Bcpp$O $Blexer$O $Bnlist$O $Btokens$O $Bmacro$O $Beval$O \
 	$Binclude$O $Bhideset$O $Bgetopt$O $Bunix$O
 
 $Bcpp$E:	$(CPPOBJS)
-		$(LD) $(LDFLAGS) -Fe$@ $(CPPOBJS) 
+		$(LD) $(LDFLAGS) -Fe$@ $(CPPOBJS)
 
 $(CPPOBJS):	cpp/cpp.h
 

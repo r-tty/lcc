@@ -84,7 +84,7 @@ process(Tokenrow *trp)
 		}
 	}
 }
-	
+
 void
 control(Tokenrow *trp)
 {

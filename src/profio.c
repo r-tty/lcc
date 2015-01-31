@@ -5,7 +5,7 @@ prof.out format:
     name
     ... (#files-1 times)
 #functions
-    name file# x y count caller file x y 
+    name file# x y count caller file x y
     ... (#functions-1 times)
 #points
     file# x y count
@@ -112,7 +112,7 @@ static struct func *afunction(char *name, char *file, int x, int y, int count) {
 	return q;
 }
 
-/* apoint - append execution point i to file's data */ 
+/* apoint - append execution point i to file's data */
 static void apoint(int i, char *file, int x, int y, int count) {
 	struct file *p = findfile(file);
 

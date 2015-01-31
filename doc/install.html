@@ -131,7 +131,7 @@ conventions or their equivalents are followed, the host-specific parts of the dr
 program, <code>lcc</code>, can be used unmodified.</p>
 
 <p>Installation on a UNIX system involves the following steps. Below, the build directory
-is referred to as <code>BUILDDIR</code>, and the commands below are executed 
+is referred to as <code>BUILDDIR</code>, and the commands below are executed
 from the distribution directory.<ol>
   <li>Create the build directory, using a version- and platform-specific naming convention as
     suggested above, and record the name of this directory in the <code>BUILDDIR</code>
@@ -177,7 +177,7 @@ from the distribution directory.<ol>
     <blockquote>
       <pre>% cc -v tst/8q.c</pre>
     </blockquote>
-    <p>and examine the diagnostic output. Make sure that <code>$BUILDDIR/gcc/cpp0</code> and <code>$BUILDDIR/gcc/include</code> 
+    <p>and examine the diagnostic output. Make sure that <code>$BUILDDIR/gcc/cpp0</code> and <code>$BUILDDIR/gcc/include</code>
     are, respectively, gcc's C preprocessor and header files. On Linux, lcc looks for
     include files in <code>$BUILDDIR/include</code>, <code>$BUILDDIR/gcc/include</code>, and <code>/usr/include</code>,
     in that order; see <a HREF="#driver"><em>Building the Driver</em></a> and <a
@@ -442,7 +442,7 @@ appropriately and type &quot;<code>make all</code>&quot;. This command builds <c
 There may be warnings, but there should be no errors. If you're using an ANSI/ISO compiler
 other than <code>cc</code>, specify its name with the <code>CC=</code> option, e.g.,
 &quot;<code>make CC=gcc all</code>&quot;. If you're running on a DEC ALPHA, use &quot;<code>make
-CC='cc -std1' all</code>&quot;; the <code>-std1</code> option is essential on 
+CC='cc -std1' all</code>&quot;; the <code>-std1</code> option is essential on
 the ALPHA.</p>
 
 <p>Once <code>rcc</code> is built with the host C compiler, run the test suite to verify
@@ -484,7 +484,7 @@ $BUILDDIR/rcc -target=sparc/solaris $BUILDDIR/sparc/solaris/tst/yacc.s:</pre>
 </blockquote>
 
 <p>where <em>X</em> is the base name of the C program <em>X</em><code>.c</code> in the
-test suite. The actual value of <code>BUILDDIR</code> will, of course, appear in 
+test suite. The actual value of <code>BUILDDIR</code> will, of course, appear in
 place of <code>$BUILDDIR</code>. This output identifies the compiler and the target, e.g., &quot;<code>$BUILDDIR/rcc</code>
 is generating code for a <code>sparc</code> running the <code>solaris</code> operating
 system.&quot;</p>
@@ -596,11 +596,11 @@ syntax and semantics of its input files.</p>
 
 <p>On Windows, lcc is designed to work with Microsoft's Visual
 C++ (VC), version 5.0 and above, and Microsoft's Assembler, MASM. It uses the VC header files,
-libraries, and command-line tools, and it uses MASM to assemble the code it generates. 
+libraries, and command-line tools, and it uses MASM to assemble the code it generates.
 You must use MASM 6.11d or later,
-because earlier  releases generate incorrect COFF object files. MASM 
+because earlier  releases generate incorrect COFF object files. MASM
 6.15 is available as part of the free
-<a href="http://msdn.microsoft.com/vstudio/downloads/ppack/default.asp">Visual 
+<a href="http://msdn.microsoft.com/vstudio/downloads/ppack/default.asp">Visual
 C++ 6.0 Processor Pack</a>.</p>
 
 <p>Building the distribution components from the ground up requires Microsoft's Visual
@@ -614,7 +614,7 @@ unmodified.</p>
 
 <p>Building from the source distribution on a Windows system involves the following steps.
 Below, the build directory is referred to as <code>BUILDDIR</code>, and the distribution
-is in <code>\dist\lcc</code>. 
+is in <code>\dist\lcc</code>.
 
 <ol>
   <li>Create the build directory, perhaps using a version- and platform-specific naming
@@ -623,7 +623,7 @@ is in <code>\dist\lcc</code>.
       <pre>C:\dist\lcc&gt;set BUILDDIR=\progra~1\lcc\<i>version</i>\bin
 C:\dist\lcc&gt;mkdir %BUILDDIR%</pre>
     </blockquote>
-    <p>The default build, or installation, directory is <code>\Program Files\lcc\</code><i>version</i><code>\bin</code>, 
+    <p>The default build, or installation, directory is <code>\Program Files\lcc\</code><i>version</i><code>\bin</code>,
     where <i>version</i> is the version number, e.g., 4.2, but the <code>nmake</code> commands require that you use the corresponding 8.3 file name, <code>progra~1</code>,
     instead of <code>Program Files</code>.</p>
   </li>
@@ -685,8 +685,8 @@ Comparing files %BUILDDIR%\1rcc.exe and %BUILDDIR%\2RCC.EXE
     <p>This command builds <code>rcc</code> twice; once using the <code>rcc</code> built by VC
     and again using the <code>rcc</code> built by <code>lcc</code>. The resulting binaries are
     compared using <code>fc</code>. They should be identical, except for one or two bytes of
-    timestamp data, as shown at the end of the output above (which will be 
-    different on your system). If <code>1rcc.exe</code> and <code>2rcc.exe</code> aren't 
+    timestamp data, as shown at the end of the output above (which will be
+    different on your system). If <code>1rcc.exe</code> and <code>2rcc.exe</code> aren't
     identical, our compiler is
     generating incorrect code; <a HREF="#bugs">contact</a> us.</p>
   </li>
@@ -716,7 +716,7 @@ C:\dist\lcc&gt;copy %BUILDDIR%\bprint.exe \bin
 
 <p>lcc is a large, complex program. We find and repair errors routinely. If you think that
 you've found a error, follow the steps below, which are adapted from the instructions in
-Chapter 1 of <cite>A Retargetable C Compiler: Design and Implementation</cite>. 
+Chapter 1 of <cite>A Retargetable C Compiler: Design and Implementation</cite>.
 
 <ol>
   <li>If you don't have a source file that displays the error, create one. Most errors are
@@ -730,10 +730,10 @@ Chapter 1 of <cite>A Retargetable C Compiler: Design and Implementation</cite>.
     lcc. If you've changed lcc and the error appears only in your version, then you'll have to
     chase the error yourself, even if it turns out to be our fault, because we can't work on
     your code.</li>
-  <li>Annotate your code with comments that explain why you think that lcc is 
-  wrong. If lcc dies with an assertion failure, please tell us where it died. If 
-  lcc crashes, please report the last part of the call chain if you can. If lcc 
-  is rejecting a program you think is valid, please tell us why you think it's 
+  <li>Annotate your code with comments that explain why you think that lcc is
+  wrong. If lcc dies with an assertion failure, please tell us where it died. If
+  lcc crashes, please report the last part of the call chain if you can. If lcc
+  is rejecting a program you think is valid, please tell us why you think it's
   valid, and include supporting page numbers in the ANSI Standard or the
     appropriate section in <cite>C: A Reference Manual</cite>, 4th edition by S. B. Harbison
     and G. L. Steele, Jr. (Prentice Hall, 1995). If lcc silently generates incorrect code for
@@ -744,8 +744,8 @@ Chapter 1 of <cite>A Retargetable C Compiler: Design and Implementation</cite>.
     The <code>LOG</code></a> file there reports what errors
     were fixed and when they were fixed. If you report a error that's been fixed, you might
     get a canned reply.</li>
-  <li>Post your program to the newsgroup <a href="news:comp.compilers.lcc"><code>comp.compilers.lcc</code></a> 
-  using a USENET newsreader like those at <a href="http://www.dejanews.com/">http://www.dejanews.com/</a> 
+  <li>Post your program to the newsgroup <a href="news:comp.compilers.lcc"><code>comp.compilers.lcc</code></a>
+  using a USENET newsreader like those at <a href="http://www.dejanews.com/">http://www.dejanews.com/</a>
   and <a href="http://groups.google.com/">http://groups.google.com/</a>.
     Please post only valid C programs; put all remarks in C comments so that we can process
     reports semi automatically.</li>

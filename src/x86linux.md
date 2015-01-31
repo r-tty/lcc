@@ -51,7 +51,7 @@ static char rcsid[] = "$Id$";
 %term CNSTU2=2070
 %term CNSTU4=4118
 %term CNSTU8=8214
- 
+
 %term ARGB=41
 %term ARGF4=4129
 %term ARGF8=8225
@@ -706,7 +706,7 @@ static void progbeg(int argc, char *argv[]) {
         parseflags(argc, argv);
         for (i = 0; i < argc; i++)
                 if (strcmp(argv[i], "-p") == 0 || strcmp(argv[i], "-pg") == 0)
-                        pflag = 1;      
+                        pflag = 1;
         intreg[EAX]   = mkreg("%%eax", EAX, 1, IREG);
         intreg[EDX]   = mkreg("%%edx", EDX, 1, IREG);
         intreg[ECX]   = mkreg("%%ecx", ECX, 1, IREG);

@@ -40,7 +40,7 @@ static void emittest(Tree t, char *v, char *suffix);
 int main(int argc, char *argv[]) {
 	int c, i;
 	Nonterm p;
-	
+
 	for (i = 1; i < argc; i++)
 		if (strcmp(argv[i], "-T") == 0)
 			Tflag = 1;
@@ -123,7 +123,7 @@ static char *stringf(char *fmt, ...) {
 	vsprintf(buf, fmt, ap);
 	va_end(ap);
 	return strcpy(alloc(strlen(buf) + 1), buf);
-}	
+}
 
 struct entry {
 	union {
@@ -313,7 +313,7 @@ static void print(char *fmt, ...) {
 					putc('\t', outfp);
 				break;
 				}
-			default: putc(*fmt, outfp); break;			
+			default: putc(*fmt, outfp); break;
 			}
 		else
 			putc(*fmt, outfp);
@@ -652,7 +652,7 @@ static void emitstruct(Nonterm nts, int ntnumber) {
 	for ( ; nts; nts = nts->link) {
 		int n = 1, m = nts->lhscount;
 		while ((m >>= 1) != 0)
-			n++;		
+			n++;
 		print("%2unsigned int %P%S:%d;\n", nts, n);
 	}
 	print("%1} rule;\n};\n\n");

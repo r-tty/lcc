@@ -32,7 +32,7 @@ static Type structdcl(int);
 static Type tnode(int, Type);
 void program(void) {
 	int n;
-	
+
 	level = GLOBAL;
 	for (n = 0; t != EOI; n++)
 		if (kind[t] == CHAR || kind[t] == STATIC
@@ -1054,7 +1054,7 @@ static void doglobal(Symbol p, void *cl) {
 }
 void doconst(Symbol p, void *cl) {
 	if (p->u.c.loc) {
-		assert(p->u.c.loc->u.seg == 0); 
+		assert(p->u.c.loc->u.seg == 0);
 		defglobal(p->u.c.loc, LIT);
 		if (isarray(p->type) && p->type->type == widechar) {
 			unsigned int *s = p->u.c.v.p;

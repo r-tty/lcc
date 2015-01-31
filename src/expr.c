@@ -46,7 +46,7 @@ Tree expr(int tok) {
 		q = pointer(expr1(0));
 		p = tree(RIGHT, q->type, root(value(p)), q);
 	}
-	if (tok)	
+	if (tok)
 		test(tok, stop);
 	return p;
 }
@@ -70,7 +70,7 @@ Tree expr1(int tok) {
 				p = incr(op, p, expr1(0));
 			}
 	}
-	if (tok)	
+	if (tok)
 		test(tok, stop);
 	return p;
 }
@@ -129,7 +129,7 @@ static Tree expr3(int k) {
 					apply(events.points, &pt, &r);
 			} else
 				r = pointer(expr3(k1 + 1));
-			p = (*optree[op])(oper[op], p, r); 
+			p = (*optree[op])(oper[op], p, r);
 		}
 	return p;
 }
@@ -350,7 +350,7 @@ static Tree primary(void) {
 		   else
 		   	tsym->u.c.v.p = memcpy(allocate((tsym->type->size/widechar->size)*sizeof (int), PERM),
 		   		tsym->u.c.v.p, (tsym->type->size/widechar->size)*sizeof (int));
-		   tsym = constant(tsym->type, tsym->u.c.v); 
+		   tsym = constant(tsym->type, tsym->u.c.v);
 		   if (tsym->u.c.loc == NULL)
 		   	tsym->u.c.loc = genident(STATIC, tsym->type, GLOBAL);
 		   p = idtree(tsym->u.c.loc); break;

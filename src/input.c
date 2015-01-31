@@ -93,7 +93,7 @@ static void pragma(void) {
 			if ((t = gettok()) == ID && tsym) {
 				tsym->ref++;
 				use(tsym, src);
-			}	
+			}
 		}
 }
 
